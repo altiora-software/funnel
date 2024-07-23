@@ -8,6 +8,7 @@ import HeroGrid from "./HeroGrid/page";
 import ProductVideo from "./ProductVideo/page";
 import Testimonials from "./Testimonial/page";
 import ButtonCTA from "./ButtonCTA/page";
+import Footer from "./Footer/page";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
         <ProductVideo />
         <Testimonials />
         <ButtonCTA />
+        <Footer />
       </main>
     </ThemeProvider>
   );
