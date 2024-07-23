@@ -3,9 +3,10 @@
 import { Button, createTheme, ThemeProvider } from "@mui/material";
 import styles from "./page.module.css";
 import TopBar from "./topbar/page";
-import theme from './theme'
+import theme from "./theme";
 import HeroGrid from "./HeroGrid/page";
-
+import ProductVideo from "./ProductVideo/page";
+import Testimonials from "./Testimonial/page";
 
 export default function Home() {
   return (
@@ -13,6 +14,8 @@ export default function Home() {
       <main className={styles.main}>
         <TopBar />
         <HeroGrid />
+        <ProductVideo />
+        <Testimonials />
       </main>
     </ThemeProvider>
   );
