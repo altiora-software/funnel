@@ -20,9 +20,9 @@ const FooterLink = styled(Link)(({ theme }) => ({
 
 const CopyrightText = styled(Typography)(({ theme }) => ({
   marginTop: theme.spacing(2),
-  fontSize: '0.8rem',
+  fontSize: "0.8rem",
   color: theme.palette.text.secondary,
-  textAlign: 'center',
+  textAlign: "center",
 }));
 
 const Footer: React.FC = () => {
@@ -30,29 +30,46 @@ const Footer: React.FC = () => {
     <FooterContainer>
       <Container>
         <Grid container spacing={4}>
-          <Grid item xs={12} md={6} style={{ textAlign: 'center' }}>
+          <Grid item xs={12} md={6} style={{ textAlign: "center" }}>
             <Box mb={2}>
               <Image
                 src="/Altiora.png"
                 alt="Altiora Logo"
                 width={150}
-                height={50}
+                height={150}
+                objectFit="contain"
               />
             </Box>
           </Grid>
-          <Grid item xs={12} md={6} style={{ textAlign: 'center' }}>
-            <Typography variant="body1" gutterBottom>
-              Proporcionamos herramientas tecnológicas a emprendedores y empresas para que puedan alcanzar a sus clientes y crecer sus negocios.
+          <Grid
+            item
+            xs={12}
+            md={6}
+            justifyContent={"center"}
+            style={{ textAlign: "center" }}
+          >
+            <Typography variant="body1">
+              Proporcionamos herramientas tecnológicas a emprendedores y
+              empresas para que puedan alcanzar a sus clientes y crecer sus
+              negocios.
             </Typography>
           </Grid>
         </Grid>
         <Grid container justifyContent="center" style={{ marginTop: 16 }}>
-          <FooterLink href="/terms-and-conditions">Términos y Condiciones</FooterLink>
-          <FooterLink href="/privacy-policy">Política de Privacidad</FooterLink>
-          <FooterLink href="/contact">Contacto</FooterLink>
+          <FooterLink href="/terms-and-conditions" sx={{ color: "black" }}>
+            Términos y Condiciones
+          </FooterLink>
+          <FooterLink href="/privacy-policy" sx={{ color: "black" }}>
+            Política de Privacidad
+          </FooterLink>
+          <FooterLink href="/contact" sx={{ color: "black" }}>
+            Contacto
+          </FooterLink>
         </Grid>
         <CopyrightText variant="body2">
-          &copy; {new Date().getFullYear()} <a href="https://altiora-software.vercel.app">Altiora</a>. Todos los derechos reservados.
+          &copy; {new Date().getFullYear()}{" "}
+          <a href="https://altiora-software.vercel.app">Altiora</a>. Todos los
+          derechos reservados.
         </CopyrightText>
       </Container>
     </FooterContainer>
