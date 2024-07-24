@@ -1,17 +1,17 @@
 import React from "react";
-import { Grid, Typography, Card, CardContent, Avatar } from "@mui/material";
+import Slider from "react-slick";
+import { Typography, Card, CardContent, Avatar, Box } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
 const TestimonialsContainer = styled("div")(({ theme }) => ({
-  padding: theme.spacing(4),
+  padding: theme.spacing(8, 4),
   textAlign: "center",
-  backgroundColor: theme.palette.background.paper,
+  backgroundColor: theme.palette.secondary.light,
 }));
 
 const TestimonialCard = styled(Card)(({ theme }) => ({
   maxWidth: 345,
   margin: "auto",
-  marginBottom: theme.spacing(2),
 }));
 
 const TestimonialAvatar = styled(Avatar)(({ theme }) => ({
@@ -35,17 +35,37 @@ const testimonials = [
     text: "Excelente servicio al cliente y el producto es de primera calidad.",
     avatar: "/images/avatar3.jpg",
   },
+  {
+    name: "Ana López",
+    text: "Muy satisfecho con los resultados. Recomendado al 100%.",
+    avatar: "/images/avatar4.jpg",
+  },
+  {
+    name: "Pedro Martínez",
+    text: "Un producto de alta calidad y un servicio excepcional.",
+    avatar: "/images/avatar5.jpg",
+  },
 ];
 
 const Testimonials: React.FC = () => {
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+  };
+
   return (
     <TestimonialsContainer>
       <Typography variant="h4" gutterBottom>
         Lo que nuestros clientes dicen
       </Typography>
-      <Grid container spacing={4}>
+      <Slider {...settings}>
         {testimonials.map((testimonial, index) => (
-          <Grid item xs={12} md={4} key={index}>
+          <Box key={index} padding={2}>
             <TestimonialCard>
               <TestimonialAvatar src={testimonial.avatar} />
               <CardContent>
@@ -55,9 +75,9 @@ const Testimonials: React.FC = () => {
                 </Typography>
               </CardContent>
             </TestimonialCard>
-          </Grid>
+          </Box>
         ))}
-      </Grid>
+      </Slider>
     </TestimonialsContainer>
   );
 };

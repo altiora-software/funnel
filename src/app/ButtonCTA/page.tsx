@@ -1,11 +1,29 @@
 import React from "react";
-import { Typography, Button } from "@mui/material";
+import { Typography, Button, Box } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
 const SecondCTAContainer = styled("div")(({ theme }) => ({
-  padding: theme.spacing(4),
+  padding: theme.spacing(10, 4),
   textAlign: "center",
-  backgroundColor: theme.palette.background.default,
+  backgroundImage: "url(https://source.unsplash.com/random/1600x900)",
+  backgroundSize: "cover",
+  backgroundPosition: "center",
+  color: "#ffffff",
+  position: "relative",
+  "&::before": {
+    content: '""',
+    position: "absolute",
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    backgroundColor: "rgba(0, 0, 0, 0.5)", // Añade un overlay oscuro
+    zIndex: 1,
+  },
+  "& > *": {
+    position: "relative",
+    zIndex: 2,
+  },
 }));
 
 const SecondCTAButton = styled(Button)(({ theme }) => ({

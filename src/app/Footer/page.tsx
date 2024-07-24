@@ -6,13 +6,14 @@ import Image from "next/image";
 const FooterContainer = styled("footer")(({ theme }) => ({
   padding: theme.spacing(4),
   textAlign: "center",
-  backgroundColor: theme.palette.background.paper,
+  backgroundColor: theme.palette.primary.dark,
+  color: theme.palette.primary.contrastText,
   marginTop: theme.spacing(4),
 }));
 
 const FooterLink = styled(Link)(({ theme }) => ({
   margin: theme.spacing(1),
-  color: theme.palette.primary.main,
+  color: theme.palette.primary.contrastText,
   textDecoration: "none",
   "&:hover": {
     textDecoration: "underline",
@@ -49,7 +50,7 @@ const Footer: React.FC = () => {
             <FooterLink href="/contact">Contacto</FooterLink>
           </Grid>
         </Grid>
-        <Typography variant="body2" color="textSecondary" mt={2}>
+        <Typography variant="body2" mt={2}>
           &copy; {new Date().getFullYear()} Altiora. Todos los derechos
           reservados.
         </Typography>
