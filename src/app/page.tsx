@@ -9,6 +9,7 @@ import ProductVideo from "./ProductVideo/page";
 import Testimonials from "./Testimonial/page";
 import ButtonCTA from "./ButtonCTA/page";
 import Footer from "./Footer/page";
+import LocationInfo from "./LocationInfo/LocationInfo";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
         <Container maxWidth="xl">
           <HeroGrid />
           <ProductVideo />
+          <LocationInfo />
           <Testimonials />
           <ButtonCTA />
           <Footer />
