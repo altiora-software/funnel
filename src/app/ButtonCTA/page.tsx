@@ -43,7 +43,17 @@ const ButtonCTA: React.FC = () => {
       <Typography variant="h4" gutterBottom>
         No esperes más, haz tu pedido hoy mismo
       </Typography>
-      <SecondCTAButton onClick={handleClick} variant="contained" color="primary" size="large">
+      <SecondCTAButton
+        onClick={handleClick}
+        variant="contained"
+        color="primary"
+        size="large"
+        sx={{
+          padding: "16px 28px",
+          fontSize: "1.25rem",
+          marginTop: "16px",
+        }}
+      >
         Comprar Ahora
       </SecondCTAButton>
     </SecondCTAContainer>

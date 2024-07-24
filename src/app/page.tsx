@@ -1,6 +1,6 @@
 "use client";
 
-import { Button, createTheme, ThemeProvider } from "@mui/material";
+import { Button, Container, createTheme, ThemeProvider } from "@mui/material";
 import styles from "./page.module.css";
 import TopBar from "./topbar/page";
 import theme from "./theme";
@@ -15,11 +15,13 @@ export default function Home() {
     <ThemeProvider theme={theme}>
       <main className={styles.main}>
         <TopBar />
-        <HeroGrid />
-        <ProductVideo />
-        <Testimonials />
-        <ButtonCTA />
-        <Footer />
+        <Container maxWidth="xl">
+          <HeroGrid />
+          <ProductVideo />
+          <Testimonials />
+          <ButtonCTA />
+          <Footer />
+        </Container>
       </main>
     </ThemeProvider>
   );
