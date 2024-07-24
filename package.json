@@ -17,14 +17,10 @@
     "@mui/styles": "^5.16.4",
     "next": "14.2.5",
     "react": "^18",
-<<<<<<< HEAD
+    "react-credit-cards": "^0.8.3",
     "react-dom": "^18",
     "react-slick": "^0.30.2",
     "slick-carousel": "^1.8.1"
-=======
-    "react-credit-cards": "^0.8.3",
-    "react-dom": "^18"
->>>>>>> bd13c5c23e2c6fd8849a8301b6b8efeab4054a0c
   },
   "devDependencies": {
     "@types/node": "^20",
