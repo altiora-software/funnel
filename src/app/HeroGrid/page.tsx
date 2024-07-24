@@ -1,19 +1,29 @@
-import React from "react";
-import { Grid, Typography, Button } from "@mui/material";
-import { styled } from "@mui/material/styles";
+// src/app/HeroGrid/page.tsx
+'use client'; // Indica que este componente se renderiza en el cliente
 
-const HeroContainer = styled("div")(({ theme }) => ({
+import React from 'react';
+import { useRouter } from 'next/navigation'; // Importa desde 'next/navigation'
+import { Grid, Typography, Button } from '@mui/material';
+import { styled } from '@mui/material/styles';
+
+const HeroContainer = styled('div')(({ theme }) => ({
   padding: theme.spacing(4),
-  textAlign: "center",
+  textAlign: 'center',
   backgroundColor: theme.palette.background.paper,
 }));
 
-const ProductImage = styled("img")({
-  width: "100%",
-  height: "auto",
+const ProductImage = styled('img')({
+  width: '100%',
+  height: 'auto',
 });
 
 const HeroGrid: React.FC = () => {
+  const router = useRouter(); // Usa 'useRouter' desde 'next/navigation'
+
+  const handleClick = () => {
+    router.push('/Checkout'); // Redirige a la página de checkout
+  };
+
   return (
     <HeroContainer>
       <Grid container spacing={4} alignItems="center">
@@ -25,7 +35,8 @@ const HeroGrid: React.FC = () => {
             variant="contained"
             color="primary"
             size="large"
-            style={{ marginTop: "16px" }}
+            style={{ marginTop: '16px' }}
+            onClick={handleClick}
           >
             Comprar Ahora
           </Button>
