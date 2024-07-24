@@ -3,18 +3,28 @@ import { Typography, Box } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
 const VideoContainer = styled("div")(({ theme }) => ({
-  padding: theme.spacing(8, 4),
+  padding: theme.spacing(8, 2),
   textAlign: "center",
   backgroundColor: theme.palette.background.paper,
 }));
 
+const VideoWrapper = styled("div")({
+  position: "relative",
+  paddingBottom: "56.25%", // 16:9 aspect ratio
+  height: 0,
+  overflow: "hidden",
+  maxWidth: "100%",
+  backgroundColor: "#000",
+  marginBottom: "16px",
+});
+
 const VideoFrame = styled("iframe")({
-  width: "80%", // Reduce el ancho del video
-  height: "450px",
+  position: "absolute",
+  top: 0,
+  left: 0,
+  width: "100%",
+  height: "100%",
   border: "none",
-  margin: "0 auto", // Centra el video
-  display: "block",
-  boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)", // Añade sombra al video
 });
 
 const ProductVideo: React.FC = () => {
@@ -23,13 +33,13 @@ const ProductVideo: React.FC = () => {
       <Typography variant="h4" gutterBottom>
         Cómo usar nuestro producto
       </Typography>
-      <Box>
+      <VideoWrapper>
         <VideoFrame
           src="https://www.youtube.com/embed/dQw4w9WgXcQ"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
         />
-      </Box>
+      </VideoWrapper>
     </VideoContainer>
   );
 };
