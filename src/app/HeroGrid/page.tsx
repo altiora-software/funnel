@@ -21,7 +21,7 @@ const HeroGrid: React.FC = () => {
   const router = useRouter(); // Usa 'useRouter' desde 'next/navigation'
 
   const handleClick = () => {
-    router.push("/Checkout"); // Redirige a la página de checkout
+    router.push("/FormMercadoPago"); // Redirige a la página de checkout
   };
 
   return (
